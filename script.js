@@ -43,7 +43,7 @@ function getWeather() {
       document.getElementById('cityName').textContent = `${data.location.name}, ${data.location.country}`;
       document.getElementById('temp').textContent = `🌡️ ${Math.round(data.current.temp_c)} °C`;
       document.getElementById('condition').textContent = data.current.condition.text;
-      document.getElementById('weatherIcon').src = data.current.condition.icon;
+      document.getElementById('weatherIcon').src = `https:${data.current.condition.icon}`;
       document.getElementById('humidity').textContent = `${data.current.humidity}%`;
       document.getElementById('wind').textContent = `${data.current.wind_kph} km/h`;
       document.getElementById('pressure').textContent = `${data.current.pressure_mb} hPa`;
