@@ -1,5 +1,14 @@
 function getWeather() {
     const city = document.getElementById('cityInput').value.trim();
+    
+    // Validate input
+    if (!city) {
+        const errorText = document.getElementById('error');
+        errorText.textContent = 'Please enter a city name';
+        errorText.classList.remove('d-none');
+        return;
+    }
+
     const apiKey = '2db331906cef4acdbab31912251804';
     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
@@ -18,6 +27,8 @@ function getWeather() {
           throw new Error('Invalid API key. Please check your API key.');
         } else if (res.status === 404) {
           throw new Error('City not found. Please check the city name and try again.');
+        } else if (res.status === 400) {
+          throw new Error('Please enter a valid city name.');
         } else {
           throw new Error(`Error: ${res.status} - ${res.statusText}`);
         }
