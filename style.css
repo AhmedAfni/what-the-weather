@@ -1,3 +1,23 @@
+/* Light theme (default) */
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --input-bg: #ffffff;
+  --input-text: #212529;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f8f9fa;
+  --glass-bg: rgba(33, 37, 41, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --input-bg: #2c3034;
+  --input-text: #f8f9fa;
+}
+
 body {
     background: linear-gradient(to right, #e0f7fa, #ffffff);
     min-height: 100vh;
